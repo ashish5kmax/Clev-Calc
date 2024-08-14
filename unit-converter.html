@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algebra</title>
+</head>
+<style>
+  @font-face {
+    font-family: "handwritten";
+    src: url(./fonts/nexa-rust/NexaRustSlab-BlackShadow01.otf);
+  }
+
+  .calc {
+    text-decoration: none;
+    font-family: "handwritten", sans-serif;
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgb(0, 0, 0)1px 1px 20px;
+    background: linear-gradient(to right, #FFB84C, #FF6D28);
+    border-radius: 4%;
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+  }
+
+  a:hover {
+    color: black;
+    background-color: yellow;
+    border-radius: 10px;
+    border: 5px solid black;
+    transition-property: all;
+    transition-duration: 150ms;
+  }
+
+  a:hover+.p1 {
+    display: block;
+  }
+
+  .flex-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .flex-container>div {
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 20px;
+  }
+
+  body {
+    background-image: url(https://www.allinonecalculator.com/images/home/background.jpg);
+  }
+
+  .p1 {
+    padding: 6%;
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 170%;
+    display: none;
+    box-shadow: rgb(255, 149, 0) 0 1px 20px;
+    border-radius: 4%;
+    justify-content: center;
+    background: linear-gradient(210deg, #000000, #4a4646);
+    color: white;
+    border-color: linear;
+  }
+</style>
+
+<body>
+  <div class="flex-container">
+    <div>
+      <a class="calc" href="./length.html" target="_blank" rel="noopener noreferrer">LENGTH CONVERTER<div></div>
+      </a>
+      <p class="p1">
+        The method of converting the measures of length from one unit to another is called length conversion. In the metric
+        system, units for length are kilometres (km), metres (m), centimetres (cm), and so on. The conversion of these units
+        from one unit to another is referred to as the conversion of units for length.
+      </p>
+    </div>
+
+    <div>
+      <a class="calc" href="./currency.html" target="_blank" rel="noopener noreferrer">CURRENCY CONVERTER
+      </a>
+      <p class="p1">
+        The foreign exchange market is a global decentralized or over-the-counter market for the trading of currencies. This
+        market determines foreign exchange rates for every currency. It includes all aspects of buying, selling and exchanging
+        currencies at current or determined prices.
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>

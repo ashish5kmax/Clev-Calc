@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Geometric Calculations</title>
+  <style>
+    @font-face {
+      font-family: geometry;
+      src: url(./fonts/fragile-bombers/Fragile\ Bombers.otf);
+    }
+    
+    @font-face {
+      font-family: goodtimes;
+      src: url(./fonts/good-times/good\ times\ rg.otf);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      background-image: url(https://www.allinonecalculator.com/images/home/background.jpg);
+      font-family: 'Bebas Neue', cursive;
+    }
+
+    #output {
+      border: 1px solid black;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .operation1 {
+      padding: 10px 10px 10px 10px;
+      border: 2px solid blue;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      text-align: center;
+      background-color: rgb(255, 123, 0);
+      width: 600px;
+      height: 450px;
+      margin-left: 66%;
+      font-size: 25px;
+      margin-bottom: 200px;
+      box-shadow: rgba(0, 0, 0, 3) 0 1px 30px;
+    }
+
+    .operation2 {
+      padding: 10px 10px 10px 10px;
+      border: 2px solid blue;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      text-align: center;
+      background-color: rgb(255, 123, 0);
+      width: 600px;
+      height: 350px;
+      margin-left: 1%;
+      font-size: 25px;
+      margin-bottom: 200px;
+      box-shadow: rgba(0, 0, 0, 3) 0 1px 30px;
+    }
+
+    h1 {
+      font-family: "goodtimes", sans-serif;
+      text-align: center;
+      margin-bottom: 100px;
+      font-size: 60px;
+      text-shadow: 2px 2px #ff8400;
+      text-shadow: rgb(255, 157, 0) 2px 5px 10px;
+    }
+
+    h1:hover {
+      text-shadow: rgb(255, 255, 0) 2px 5px 10px;
+      transition: all;
+      transition-duration: 500ms;
+    }
+
+    /* CSS */
+    button {
+      background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+      border-radius: 8px;
+      border-style: none;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      height: 3rem;
+      padding: 0 1.6rem;
+      text-align: center;
+      text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+      transition: all .5s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      transition: all;
+      transition-duration: 1s;
+    }
+
+    button:hover {
+      transition: all;
+      box-shadow: rgba(0, 0, 0, 3) 0 1px 30px;
+      transition-duration: .1s;
+    }
+
+    @media (min-width: 768px) {
+      .button-36 {
+        padding: 0 2.6rem;
+      }
+    }
+
+    .rect {
+      float: left;
+      font-size: 20px;
+      font-family: 'Edu NSW ACT Foundation', cursive;
+    }
+
+    .circ {
+      float: right;
+      font-size: 20px;
+      font-family: 'Edu NSW ACT Foundation', cursive;
+    }
+
+    .linesegment {
+      float: left;
+      font-size: 20px;
+      font-family: 'Edu NSW ACT Foundation', cursive;
+    }
+
+    .distance {
+      float: right;
+      font-size: 20px;
+      font-family: 'Edu NSW ACT Foundation', cursive;
+    }
+
+    .triangle {
+      float: left;
+      font-size: 20px;
+      font-family: 'Edu NSW ACT Foundation', cursive;
+    }
+
+    .r {
+      float: left;
+      margin-top: 30px;
+      width: 600px;
+    }
+
+    .c {
+      float: right;
+      margin-top: 30px;
+      width: 600px;
+      border-radius: 5%;
+    }
+
+    .l {
+      float: left;
+      margin-left: 110px;
+      margin-top: 30px;
+      width: 400px;
+      border-radius: 5%;
+    }
+
+    .d {
+      float: right;
+      margin-top: 30px;
+      width: 500px;
+      height: 300px;
+      border-radius: 5%;
+    }
+
+    .t {
+      float: left;
+      margin-left: 110px;
+      margin-bottom: 30px;
+      width: 600px;
+      border-radius: 5%;
+    }
+
+    #rectangle {
+      background-color: #EFEFEF;
+      height: 550px;
+      border-radius: 1%;
+      padding: 2%;
+    }
+
+    #circle {
+      background-color: #EAF6F6;
+      height: 550px;
+      border-radius: 1%;
+      padding: 1.5%;
+    }
+
+    #ls {
+      background-color: #B2B2B2;
+      height: 550px;
+      border-radius: 1%;
+      padding: 1.5%;
+    }
+
+    #dist {
+      background-color: #FFFFFF;
+      height: 550px;
+      border-radius: 1%;
+      padding: 1.5%;
+    }
+
+    #tri {
+      background-color: #EEF2FF;
+      height: 550px;
+      border-radius: 1%;
+      padding: 1.5%;
+    }
+
+    #home {
+      text-align: center;
+      color: #FCE22A;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .footer {
+      margin-left: 44%;
+    }
+    
+    nav {
+      text-align: center;
+      justify-content: space-evenly;
+    }
+    
+    .nav {
+      font-family : "geometry", sans-serif;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.7rem;
+      text-shadow: rgb(255, 128, 1) 0 1px 5px;
+    }
+
+    .nav:hover {
+      font-size: 1.75rem;
+      text-shadow: rgb(4, 255, 0) 0 3px 8px;
+      transition: all;
+      transition-duration: 500ms;
+    }
+
+    .header {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="header" href="./geometry.html"><h1>Geometric Calculations</h1></a>
+  <br>
+  <br>
+  <nav>
+    <a class="nav" href="#rectangle">Rectangle&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a class="nav" href="#circle">Circle&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a class="nav" href="#ls">Line Segment&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a class="nav" href="#dist">Distance&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <a class="nav" href="#tri">Triangle&nbsp;&nbsp;&nbsp;</a>
+  </nav>
+  <br>
+  <br>
+  <div id="rectangle">
+    <div class="rect">
+      <ul>
+        <li><strong>In Euclidean plane geometry, a rectangle is a quadrilateral with four right angles. It can also be
+            defined as: an<br>
+            equiangular quadrilateral, since equiangular means that all of its angles are equal; or a parallelogram
+            containing
+            a<br>
+            right angle.A rectangle with four sides of equal length is a square.
+          </strong>
+          <br>
+        </li>
+      </ul>
+      <img class="r" src="./images/rect.png" alt="rectangle">
+    </div>
+    <div class="operation1">
+      <h2>Rectangle</h2>
+      <p>Width: <input type="number" id="rect-width" value="" /></p>
+      <p>Height: <input type="number" id="rect-height" value="" /></p>
+      <button onclick="calculateRectangle()">Calculate</button>
+      <div id="rect-output" class="output"></div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div id="circle">
+    <div class="circ">
+      <ul>
+        <li><strong>A circle is a shape consisting of all points in a plane that are at a given distance from a given
+            point, the centre.<br>
+            Equivalently, <br>it is the curve traced out by a point that moves in a plane so that its distance from a
+            given point is
+            constant.<br>
+          </strong>
+          <br>
+        </li>
+      </ul>
+      <img class="c" src="./images/circle.png" alt="circle">
+    </div>
+    <div class="operation2">
+      <h2>Circle</h2>
+      <p>Radius: <input type="number" id="circle-radius" value="" /></p>
+      <button onclick="calculateCircle()">Calculate</button>
+      <div id="circle-output" class="output"></div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <div id="ls">
+    <div class="linesegment">
+      <ul>
+        <li><strong>In geometry, a line segment is a part of a straight line that is bounded by two distinct end
+            points,<br> and contains every
+            point on the line that is between its endpoints.<br>
+          </strong>
+          <br>
+        </li>
+      </ul>
+      <img class="l" src="./images/line.png" alt="rectangle">
+    </div>
+    <div class="operation1">
+      <h2>Line Segment</h2>
+      <p>
+        Point 1: <input type="number" id="line-x1" value="" />,
+        <input type="number" id="line-y1" value="" />
+      </p>
+      <p>
+        Point 2: <input type="number" id="line-x2" value="" />,
+        <input type="number" id="line-y2" value="" />
+      </p>
+      <button onclick="calculateLine()">Calculate</button>
+      <div id="line-output" class="output"></div>
+    </div>
+  </div>
+  <br>
+  <div id="dist">
+    <div class="distance">
+      <ul>
+        <li><strong>In geometry, a line segment is a part of a straight line that is bounded by two distinct end
+            points,<br>
+            and contains every
+            point on the line that is between its endpoints.<br>
+          </strong>
+          <br>
+        </li>
+      </ul>
+      <img class="d" src="./images/distance.png" alt="rectangle">
+    </div>
+    <div class="operation2">
+      <h2>Distance Between Two Points</h2>
+      <p>
+        Point 1: <input type="number" id="dist-x1" value="" />,
+        <input type="number" id="dist-y1" value="" />
+      </p>
+      <p>
+        Point 2: <input type="number" id="dist-x2" value="" />,
+        <input type="number" id="dist-y2" value="" />
+      </p>
+      <button onclick="calculateDistance()">Calculate</button>
+      <div id="dist-output" class="output"></div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div id="tri">
+    <div class="triangle">
+      <ul>
+        <li><strong>A triangle is a polygon with three edges and three vertices. It is one of the basic shapes in
+            geometry. <br>A triangle with
+            vertices A, B, and C is denoted triangle ABC.<br> In Euclidean geometry, any three points, when
+            non-collinear, <br>determine a
+            unique triangle and simultaneously, a unique plane.<br>
+          </strong>
+          <br>
+        </li>
+      </ul>
+      <img class="t" src="./images/triangle.png" alt="rectangle">
+    </div>
+    <div class="operation1">
+      <h2>Triangle</h2>
+      <p>Side 1: <input type="number" id="tri-side1" value="" /></p>
+      <p>Side 2: <input type="number" id="tri-side2" value="" /></p>
+      <p>Side 3: <input type="number" id="tri-side3" value="" /></p>
+      <button onclick="calculateTriangle()">Calculate</button>
+      <div id="tri-output" class="output"></div>
+    </div>
+  </div>
+  <script src="geometric.js"></script>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="footer">
+    <strong><button type="button"><a id="home" href="./index.html" rel="noopener noreferrer">Back to homepage</a></button></strong>
+  </div>
+</body>
+
+</html>

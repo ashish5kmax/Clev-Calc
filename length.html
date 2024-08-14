@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Length Converter</title>
+  <style>
+    @font-face {
+      font-family: montserrat;
+      src: url(./fonts/montserrat/Montserrat-Regular.ttf);
+    }
+
+    body {
+      font-family: "montserrat", sans-serif;
+      background-image: url(https://www.allinonecalculator.com/images/home/background.jpg);
+    }
+
+    h1 {
+      text-align: center;
+      text-shadow: rgba(0, 0, 0, 0.5)0 2px 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 4% auto;
+
+      padding: 20px;
+      border-radius: 10px;
+      background: linear-gradient(315deg, #EBB02D, #FDD36A);
+      box-shadow: rgba(0, 0, 0, 0.506)0 10px  40px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    select,
+    input[type="number"] {
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 16px;
+      width: 200px;
+    }
+
+    button[type="button"] {
+      font-family: "montserrat", sans-serif;
+      color: #673FD7;
+      background-color: rgb(255, 242, 0);
+      border: none;
+      border-radius: 5px;
+      padding: 10px 10px;
+      margin-bottom: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button[type="button"]:hover {
+      background-color: #fbff00;
+      box-shadow: rgba(0, 0, 0, 0.171)0 2px 20px;
+    }
+
+    #result {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    /* CSS */
+    .button-36 {
+      margin-left: 45.5%;
+      background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+      border-radius: 8px;
+      border-style: none;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      height: 4rem;
+      padding: 0 1.6rem;
+      text-align: center;
+      text-shadow: rgba(0, 0, 0, 0.56) 0 3px 8px;
+      transition: all .5s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-36:hover {
+      box-shadow: rgba(0, 0, 0, 3) 0 1px 30px;
+      transition-duration: .1s;
+    }
+
+    a {
+      color: #fbff00;
+      text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+      .button-36 {
+        padding: 0 2.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <h1>Length Converter</h1>
+    <label for="fromCurrency">From: </label>
+    <select id="fromCurrency">
+      <option value="CM">Centimetre (CM)</option>
+      <option value="MM">Millimetre (MM)</option>
+      <option value="M">Metre (M)</option>
+      <option value="KM">Kilometre (KM)</option>
+      <option value="YARD">Yard (YARD)</option>
+      <option value="FT">Feet (FT)</option>
+      <option value="IN">Inch (IN)</option>
+    </select>
+    <br />
+    <label for="toCurrency">To:</label>
+    <select id="toCurrency">
+      <option value="CM">Centimetre (CM)</option>
+      <option value="MM">Millimetre (MM)</option>
+      <option value="M">Metre (M)</option>
+      <option value="KM">Kilometre (KM)</option>
+      <option value="YARD">Yard (YARD)</option>
+      <option value="FT">Feet (FT)</option>
+      <option value="IN">Inch (IN)</option>
+    </select>
+    <br />
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" />
+    <br />
+    <button type="button" onclick="convertCurrency()">Convert</button><br />
+    <button type="button" onclick="clearForm()">Clear</button>
+  </form>
+  <br />
+  <p id="result"></p>
+
+  <div class="footer">
+    <strong><button class="button-36" type="button"><a id="home" href="index.html" rel="noopener noreferrer">Back to
+          homepage</a></button></strong>
+  </div>
+  <script>
+    function convertCurrency() {
+      // Get the selected currencies and amount
+      const fromCurrency = document.getElementById("fromCurrency").value;
+      const toCurrency = document.getElementById("toCurrency").value;
+      const amount = document.getElementById("amount").value;
+
+      // Define the exchange rates
+      const exchangeRates = {
+        CM: {
+          MM: 10,
+          M: 0.01,
+          KM: 0.00001,
+          YARD: 0.0109361,
+          FT: 0.0328083,
+          IN: 0.393701,
+        },
+        MM: {
+          CM: 0.1,
+          M: 0.001,
+          KM: 0.000001,
+          YARD: 0.00109361,
+          FT: 0.00328083,
+          IN: 0.03936996,
+        },
+        M: {
+          CM: 100,
+          MM: 1000,
+          KM: 0.001,
+          YARD: 1.09361,
+          FT: 3.28084,
+          IN: 39.3701,
+        },
+        KM: {
+          CM: 100000,
+          MM: 1000000,
+          M: 1000,
+          YARD: 1093.61,
+          FT: 3280.84,
+          IN: 39370.1,
+        },
+        YARD: {
+          CM: 91.44,
+          MM: 914.4,
+          M: 0.9144,
+          KM: 0.0009144,
+          FT: 3,
+          IN: 36,
+        },
+        FT: {
+          CM: 30.48,
+          MM: 304.8,
+          M: 0.3048,
+          KM: 0.0003048,
+          YARD: 0.333333,
+          IN: 12,
+        },
+        IN: {
+          CM: 2.54,
+          MM: 25.4,
+          M: 0.0254,
+          KM: 0.0000254,
+          YARD: 0.0277778,
+          FT: 0.0833333,
+        },
+      };
+
+      // Calculate the result
+      const result = (
+        amount * exchangeRates[fromCurrency][toCurrency]
+      ).toFixed(2);
+
+      // Display the result
+      document.getElementById("result").textContent =
+        amount + " " + fromCurrency + " = " + result + " " + toCurrency;
+    }
+
+    function clearForm() {
+      // Reset the form
+      document.getElementById("fromCurrency").selectedIndex = 0;
+      document.getElementById("toCurrency").selectedIndex = 0;
+      document.getElementById("amount").value = "";
+      document.getElementById("result").textContent = "";
+    }
+  </script>
+</body>
+
+</html>

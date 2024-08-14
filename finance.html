@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algebra</title>
+</head>
+<style>
+  @font-face {
+    font-family: "handwritten";
+    src: url(./fonts/nexa-rust/NexaRustSlab-BlackShadow01.otf);
+  }
+
+  .calc {
+    text-decoration: none;
+    font-family: "handwritten", sans-serif;
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgb(0, 0, 0)1px 1px 20px;
+    background: linear-gradient(to right, #FFB84C, #FF6D28);
+    border-radius: 4%;
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+  }
+
+  a:hover {
+    color: black;
+    background-color: yellow;
+    border-radius: 10px;
+    border: 5px solid black;
+    transition-property: all;
+    transition-duration: 150ms;
+  }
+
+  a:hover+.p1 {
+    display: block;
+  }
+
+  .flex-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .flex-container>div {
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 20px;
+  }
+
+  body {
+    background-image: url(https://www.allinonecalculator.com/images/home/background.jpg);
+  }
+
+  .p1 {
+    padding: 6%;
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 170%;
+    display: none;
+    box-shadow: rgb(255, 149, 0) 0 1px 20px;
+    border-radius: 4%;
+    justify-content: center;
+    background: linear-gradient(210deg, #000000, #4a4646);
+    color: white;
+    border-color: linear;
+  }
+</style>
+
+<body>
+  <div class="flex-container">
+    <div>
+      <a class="calc" href="./loan.html" target="_blank" rel="noopener noreferrer">LOAN CALCULATOR<div></div>
+      </a>
+      <p class="p1">
+        Loan calculators can help you figure out your monthly payments on different types of loans. These include mortgages, car
+        loans, personal loans, and so on. They can also help you understand how much you can afford to borrow based on your
+        income and other factors.
+      </p>
+    </div>
+
+    <div>
+      <a class="calc" href="./profit.html" target="_blank" rel="noopener noreferrer">PROFIT OR LOSS
+      </a>
+      <p class="p1">
+        Our online tools will provide quick answers to your calculation and conversion needs. On this page, you can calculate
+        selling price, cost price, profit percentage and net profit or loss for your sales transaction e.g., buying and selling
+        of goods or trading in forex, stock markets.
+      </p>
+    </div>
+    <div>
+      <a class="calc" href="./tip.html" target="_blank" rel="noopener noreferrer">TIP CALCULATOR
+      </a>
+      <p class="p1">
+        People generally tip 15-20% of the bill. To calculate tip multiply the total check by 1 plus the decimal percentage tip
+        you'd like to leave. If you wanted to leave a 20% tip, you would add 1 to 0.20 to get 1.20. Multiply the bill by 1.20 to
+        get the total amount you'd leave including tip.
+      </p>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

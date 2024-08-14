@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Profit and Loss Calculator</title>
+	<style>
+		body {
+			background-color: #001f4f;
+			font-family: Verdana;
+		}
+
+		body {
+			background-image: url(https://www.allinonecalculator.com/images/home/background.jpg);
+
+			font-family: "Raleway", sans-serif;
+		}
+
+		.plcalculate {
+			text-align: center;
+			background-color: darkorange;
+			width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px;
+			border-radius: 30px;
+		}
+
+		h2 {
+			color: white;
+		}
+
+		button {
+			margin: 20px auto;
+			width: 150px;
+			height: 50px;
+			background-color: #39cccc;
+			color: #fff;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+		}
+
+		/* CSS */
+		.button-36 {
+			background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+			border-radius: 8px;
+			border-style: none;
+			box-sizing: border-box;
+			color: #FFFFFF;
+			cursor: pointer;
+			flex-shrink: 0;
+			font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+			font-size: 16px;
+			font-weight: 500;
+			height: 4rem;
+			padding: 0 1.6rem;
+			text-align: center;
+			text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+			transition: all .5s;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+			margin-top: 390px;
+			margin-left: -367px;
+		}
+
+		.button-36:hover {
+			box-shadow: rgba(0, 0, 0, 3) 0 1px 30px;
+			transition-duration: .1s;
+		}
+
+		@media (min-width: 768px) {
+			.button-36 {
+				padding: 0 2.6rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="plcalculate">
+		<h1>Profit and Loss Calculator</h1>
+
+		<p>Cost Price(₹) :
+			<input class="cost__price" type="number" />
+		</p>
+
+		<p>Selling Price(₹) :
+			<input class="selling__price" type="number" />
+		</p>
+
+		<button onclick="Calculate()">Calculate</button>
+
+		<p>
+		<h2 class="profit__loss"></h2>
+		<h2 class="profit__loss__percentage"></h2>
+		<h2 class="nothing"></h2>
+		</p>
+	</div>
+
+	<script>
+		function Calculate() {
+			const CP = document.querySelector(".cost__price").value;
+			const SP = document.querySelector(".selling__price").value;
+
+			const profit__loss = document.querySelector(".profit__loss");
+			const percentage = document.querySelector(".profit__loss__percentage");
+			const nothing = document.querySelector(".nothing");
+
+			profit__loss.innerHTML = "";
+			percentage.innerHTML = "";
+			nothing.innerHTML = "";
+
+			if (SP > CP) {
+				const profit = SP - CP;
+				const profit_percent = ((profit / CP) * 100).toFixed(2);
+
+				profit__loss.innerHTML = "Profit : " + profit;
+				percentage.innerHTML = "Profit Percentage : " + profit_percent;
+			}
+			if (SP < CP) {
+				const loss = CP - SP;
+				const loss_percent = ((loss / CP) * 100).toFixed(2);
+
+				profit__loss.innerHTML = "Loss : " + loss;
+				percentage.innerHTML = "Loss Percentage : " + loss_percent;
+			}
+			if (SP == CP) {
+				nothing.innerHTML = "No Profit No Loss";
+			}
+		}
+	</script>
+</body>
+
+</html>

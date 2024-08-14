@@ -1,0 +1,133 @@
+
+.footer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background: #121315;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer p {
+  color: #fff;
+  max-width: 25em;
+  font-size: 0.9em;
+  line-height: 23px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.footer .brand {
+  display: block;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.footer .media-icons li,
+.footer .services-icons li {
+  display: inline-block;
+  margin: 0.5em 0.5em 0.5em 0;
+}
+
+.footer .media-icons a {
+  font-size: 1.1em;
+  width: 2em;
+  height: 2em;
+  border: 1px #fff solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.footer .media-icons a:hover {
+  background: #fff;
+  color: #111;
+}
+
+.footer .services-icons a {
+  font-size: 1.6em;
+}
+
+.footer .services-icons a:hover {
+  color: #94fbab;
+}
+
+.footer .footer-bottom {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(138, 208, 153, 0.36);
+  padding: 2em;
+}
+
+.footer .menu {
+  margin-bottom: 1em;
+}
+
+.footer .menu li {
+  display: inline-block;
+  margin: 0 0.7em 0.7em 0;
+  text-align: center;
+}
+
+.footer .menu a {
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.footer .menu a:hover {
+  color: #94fbab;
+}
+
+.footer .input-wrap {
+  margin: 1em 0;
+  display: flex;
+}
+
+.footer .input-wrap input {
+  padding: 0.5em;
+  border: none;
+  background: #20232a;
+  color: #ccc;
+}
+
+.footer .input-wrap input:focus {
+  outline: none;
+}
+
+.footer .input-wrap button {
+  padding: 0.8em;
+  background: #94fbab;
+  border: none;
+  color: #217634;
+  transition: 0.3s;
+}
+
+.footer .input-wrap button:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .footer .container {
+    flex-direction: column;
+  }
+}
