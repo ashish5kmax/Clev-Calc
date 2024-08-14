@@ -21,7 +21,7 @@
       z-index: -1;
       display: none;
     }
-    
+
     .title:hover {
       display: inline-block;
 
@@ -78,11 +78,11 @@
       z-index: 1;
       /* Ensure the cool box appears above the background */
     }
-    
+
     .bg-white {
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
     }
-    
+
     #content {
       width: 105%;
     }
@@ -155,14 +155,26 @@
         width: 1000px;
       }
     }
-    
+
     #scrooling {
       position: fixed;
-      bottom: 10px; /* Adjust this value as needed */
-      right: 10px; /* Adjust this value as needed */
+      bottom: 10px;
+      /* Adjust this value as needed */
+      right: 10px;
+      /* Adjust this value as needed */
       z-index: 999;
     }
 
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      /* Prevent horizontal overflow */
+    }
   </style>
 </head>
 
@@ -263,10 +275,10 @@
           <h1
             class="text-4xl font-bold tracking-tight text-white-900 sm:text-6xl animate__animated animate__lightSpeedInLeft"
             style="color: white;">
-            <span class="title text-6xl">C</span><span class="title text-6xl">l</span><span class="title text-6xl">e</span><span
-            class="title text-6xl">v</span>
-            <span class="title text-6xl">C</span><span class="title text-6xl">a</span><span class="title text-6xl">l</span><span
-            class="title text-6xl">c</span>
+            <span class="title text-6xl">C</span><span class="title text-6xl">l</span><span
+              class="title text-6xl">e</span><span class="title text-6xl">v</span>
+            <span class="title text-6xl">C</span><span class="title text-6xl">a</span><span
+              class="title text-6xl">l</span><span class="title text-6xl">c</span>
           </h1>
           <p class="mt-6 text-lg leading-8 text-white-600 animate__animated animate__lightSpeedInLeft"
             style="color: white;">The Engineering
@@ -278,8 +290,8 @@
               started</a>
             <a href="#about" class="text-sm font-semibold leading-6 text-white-900" style="color: white;">Learn more
               <span aria-hidden="true">→</span></a>
-            </div>
-            <img id="background" src="./images/back-5.gif" alt="">
+          </div>
+          <img id="background" src="./images/back-5.gif" alt="">
           <br />
           <br />
           <br />
@@ -287,12 +299,10 @@
       </div>
 
       <!-- Image on the right -->
-      <div class="hidden lg:block">
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.523/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/zIZP7EnVw8mGJWp6/scene.splinecode"></spline-viewer>
+      <div class="hidden lg:block" style="overflow: hidden; width: 60%; height: 70vh;">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.12/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/ADZddN6RwK2OpbEv/scene.splinecode"></spline-viewer>
       </div>
-
-
 
       <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
