@@ -9,4 +9,4 @@
 https://user-images.githubusercontent.com/111702590/228903535-fbece154-08b4-43fe-b867-eb6005517527.mp4
 
 # link
-* [Clev-Calc](https://ashish5kmax.github.io/Clev-Calc/)
+* ![Clev-Calc](https://ashish5kmax.github.io/Clev-Calc/)
