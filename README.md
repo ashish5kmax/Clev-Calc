@@ -1,4 +1,4 @@
-# Cleav Calc
+# Clev Calc
 * This is a multipurpose calculator used for calculations like arithmatic operations, bitwise operations , scientific calculator operations like factorial, sin,           cos, tan, log etc.
 * Below are some of the screenshots of my website and it's design for example
 
